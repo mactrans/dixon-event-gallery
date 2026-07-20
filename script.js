@@ -1,0 +1,4 @@
+const events=[{name:'2nd Babymoon Shoot',link:'https://drive.google.com/drive/folders/1h5OjmDqFyh6-WmsvW1kuKogM9mjS4HQS?usp=sharing'},...Array.from({length:19},(_,i)=>({name:`Event ${i+2}`,link:'#'}))];
+const g=document.getElementById('g');g.className='grid';
+function render(f=''){g.innerHTML='';events.filter(e=>e.name.toLowerCase().includes(f.toLowerCase())).forEach(e=>{let d=document.createElement('div');d.className='card';d.innerHTML=`<h3>${e.name}</h3><p>Photo Album</p><a class="btn" target="_blank" href="${e.link}">View Photos</a>`;g.appendChild(d);});}
+render();document.getElementById('s').oninput=e=>render(e.target.value);
